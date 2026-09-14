@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>周应丹 · AI 产品经理简历</title>
+<meta name="description" content="周应丹 - AI 产品经理，4 年经验，专注 RAG / Agent 工作流与 Prompt 工程。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #f2f2f2;
+    --paper: #ffffff;
+    --primary: #2b3a67;          /* 深藏青主色 */
+    --primary-bg: #eef0f6;       /* 标题浅色底纹 */
+    --text: #333333;
+    --text-secondary: #555555;
+    --text-muted: #888888;
+    --line: #d9dce4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "PingFang SC", "Segoe UI", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    font-size: 13.5px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* 打印 / 导出 PDF 按钮 */
+  .print-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 18px;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0,0,0,.08), 0 4px 12px rgba(43,58,103,.25);
+    transition: background .15s ease, transform .15s ease;
+  }
+  .print-btn:hover { background: #1f2b4d; transform: translateY(-1px); }
+
+  /* 纸张容器 */
+  .page {
+    max-width: 794px;
+    margin: 40px auto;
+    padding: 56px 60px;
+    background: var(--paper);
+    box-shadow: 0 1px 3px rgba(0,0,0,.08), 0 12px 40px rgba(0,0,0,.08);
+  }
+
+  /* ============ 个人信息头部（位置不变） ============ */
+  .profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 34px;
+    padding-bottom: 22px;
+    border-bottom: 2px solid var(--primary);
+  }
+  .profile-info { flex: 1; min-width: 0; }
+  .profile-name {
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    color: var(--primary);
+  }
+  .profile-intent {
+    margin-top: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-secondary);
+  }
+  .profile-contact {
+    margin-top: 12px;
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+  .photo-placeholder {
+    flex: none;
+    width: 96px;
+    height: 128px;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 2px solid var(--primary);
+  }
+  .photo-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ============ 章节（标题样式 + 底纹，位置不变） ============ */
+  .section { margin-bottom: 30px; }
+
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--primary);
+    background: var(--primary-bg);
+    padding: 8px 14px;
+    margin-bottom: 16px;
+    border-left: 5px solid var(--primary);
+    border-radius: 2px;
+  }
+  .section-title::before {
+    content: "";
+    flex: none;
+    width: 4px;
+    height: 16px;
+    background: var(--primary);
+    border-radius: 1px;
+  }
+
+  /* ============ 个人优势 ============ */
+  .summary { color: var(--text-secondary); }
+
+  /* ============ 项目经历 ============ */
+  .project { margin-bottom: 22px; }
+  .project:last-child { margin-bottom: 0; }
+
+  .project-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .project p {
+    margin-bottom: 7px;
+    color: var(--text-secondary);
+  }
+  .project p:last-child { margin-bottom: 0; }
+
+  .field-label {
+    font-weight: 700;
+    color: var(--primary);
+  }
+
+  strong { font-weight: 600; color: var(--text); }
+
+  /* ============ 工作经历 ============ */
+  .job { margin-bottom: 20px; }
+  .job:last-child { margin-bottom: 0; }
+
+  .job-head {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 8px;
+  }
+  .job-company { flex: 1.6; font-size: 15px; font-weight: 700; color: var(--text); }
+  .job-period { flex: 1; font-size: 13px; color: var(--text-muted); }
+  .job-role { flex: 1; text-align: right; font-size: 13px; font-weight: 600; color: var(--primary); }
+  .job p { color: var(--text-secondary); margin-bottom: 6px; }
+  .job p:last-child { margin-bottom: 0; }
+
+  /* ============ 技能总结 ============ */
+  .skill-row { margin-bottom: 9px; color: var(--text-secondary); }
+  .skill-row:last-child { margin-bottom: 0; }
+  .skill-row .skill-name { font-weight: 700; color: var(--primary); }
+
+  /* ============ 教育背景 ============ */
+  .edu-head { display: flex; gap: 16px; }
+  .edu-school { flex: 1; font-weight: 700; color: var(--text); }
+  .edu-period { flex: 1; color: var(--text-muted); }
+  .edu-major { flex: 1; color: var(--text-secondary); }
+  .edu-degree { flex: 1; text-align: right; color: var(--text-secondary); }
+
+  /* ============ 打印样式 ============ */
+  @media print {
+    body { background: #fff; font-size: 12.5px; }
+    .print-btn { display: none !important; }
+    .page {
+      max-width: none;
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+    }
+    a { color: inherit; text-decoration: none; }
+    .section { margin-bottom: 20px; }
+    .project { margin-bottom: 16px; }
+    .project p { margin-bottom: 5px; }
+    .profile-header { margin-bottom: 24px; }
+  }
+
+  @page {
+    size: A4;
+    margin: 17mm 16mm;
+  }
+
+  /* ============ 小屏响应式 ============ */
+  @media (max-width: 600px) {
+    .page { margin: 0; padding: 28px 22px; box-shadow: none; }
+    .profile-name { font-size: 24px; }
+    .photo-placeholder { width: 72px; height: 96px; }
+    .job-head { flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+
+<button class="print-btn" onclick="window.print()">打印 / 导出 PDF</button>
+
+<div class="page" id="page"></div>
+
+<script>
+/* ==========================================================================
+   📝 简历数据 —— 只改下面这个 RESUME 对象就行！
+   加粗用 ** 前后包住，例如 **加粗内容**
+   ========================================================================== */
+const RESUME = {
+  name: "周应丹",
+  intent: "AI 产品经理/agent开发",
+  phone: "19172450439",
+  email: "1049509275@qq.com",
+  location: "深圳",
+  photo: "avatar.jpg",
+
+  summary: "**4年AI产品经理经验，擅长将大模型能力转化为可落地的业务系统**——具备RAG/Agent工作流从方案设计到上线迭代的完整闭环经验，能独立完成大模型选型评估与Prompt策略设计；擅长跨团队协调推动复杂AI项目落地，也具备独立动手能力（可通过AI辅助工具从0到1搭建产品原型验证方案可行性）；应用心理学专业背景，擅长将专业领域知识转化为产品需求与AI交互设计。",
+
+  projects: [
+    {
+      title: "项目一：企业级智能客服AI化升级系统",
+      rows: [
+        { label: "背景（痛点）", text: "企业知识分散，通用大模型**幻觉率12%**，人工咨询成本占总客服成本**40%**；工单人工分发效率低，**首响40分钟**，错配率高。" },
+        { label: "技术决策", text: "设计**RAG问答链路**（关键词+语义双路检索找答案 → 排序找最相关内容 → 接入**deepseek**生成回答），并搭建**AI工单智能路由**流程（自动判断工单类型、按优先级自动分单）。" },
+        { label: "评测兜底", text: "建立**10%人工抽检**+低置信度转人工机制，**Badcase周度标注回流**持续迭代模型与知识库；工单侧建立准确率周报监控路由质量。" },
+        { label: "量化结果", text: "问答**准确率65%→89%**，**幻觉率降至3%**，单次调用成本降23%，年省人力150万；工单首响**40分钟→12分钟**，错配率降60%，释放**30%运营人力**。" },
+        { label: "延伸实践", text: "结合9月新发布的《顾客联络服务 人工与智能客户服务协同要求》**国标**，独立设计并开发**AI客服人机协同MVP**——用**Claude Code+Cursor**完成从PRD到系统的**Vibe Coding**独立开发；核心是把“AI该答什么、什么必须转人工”这条边界固化成**规则引擎（P0-P5五级）+承诺留痕+运营看板**的可执行闭环；转人工判定用**独立于大模型的纯规则**，保证AI故障时人工通道仍可用；**46项自动化测试全部通过，**作为该问题在新监管要求下的产品方案预研。" }
+      ]
+    },
+    {
+      title: "项目二：AI每日简报助手（个人独立项目）",
+      rows: [
+        { label: "背景（痛点）", text: "AI资讯呈现“多、散、慢、语言墙”特征——论文站/科技媒体/国内快讯分散在十几个渠道，前沿内容多为英文，用户**日均刷资讯耗时约30分钟**。" },
+        { label: "技术决策", text: "设计“**多源采集**→归一去重→**RAG**翻译摘要→**多维表格沉淀**→**个性化推送**”两条自动流水线（采集入库/早报推送）；技术选型**n8n**可视化编排+**飞书**开放平台+**DeepSeek**。" },
+        { label: "评测兜底", text: "接入真实DeepSeek API与飞书日历/多维表格联调验证，覆盖4个信息源；定位并解决9类第三方对接问题，实现**零人工干预**自动运行。" },
+        { label: "量化结果", text: "日均资讯获取时长从**30分钟→2分钟**（降幅超**90%**）；4源、单源限流5条控制信息噪音与调用成本；去重机制大幅降低重复调用成本。" }
+      ]
+    },
+    {
+      title: "项目三：营养助手（个人独立项目）",
+      rows: [
+        { label: "背景（痛点）", text: "饮食记录门槛高，**一顿饭需7-8步**操作，且用户需额外切换App，加上缺乏即时反馈，用户难以坚持。" },
+        { label: "技术决策", text: "设计“**建档定标→文字/食材/图片三种输入→自动记账→反馈闭环**”；接入**qwen**-max、qwen-vl-max，n8n+飞书搭建MVP。" },
+        { label: "评测兜底", text: "约**20个节点**端到端联调，定位并解决12类工程问题，支持**多用户**按open_id隔离并发使用。" },
+        { label: "量化结果", text: "单次饮食记录操作从**7-8步→1条消息**（降幅超**85%**）；响应耗时约**3-5秒**；由**一人独立完成**需求定义、设计到落地全流程。" }
+      ]
+    }
+  ],
+
+  jobs: [
+    {
+      company: "上海百秋新网商数字科技有限公司",
+      period: "2025.03~2026.08",
+      role: "AI 产品经理",
+      desc: [
+        "主导客服中心AI化升级，设计RAG智能问答与AI工单路由双引擎方案，协调算法/研发/运营10人团队推进落地；",
+        "负责客服运营业务线的AI能力复用与流程重构。项目上线后客服综合运营成本与人力投入大幅下降，服务响应效率与客户满意度显著提升，该业务线人效提升35%。"
+      ]
+    },
+    {
+      company: "抵星(深圳)人工智能有限公司",
+      period: "2022.08~2025.01",
+      role: "AI 产品经理",
+      desc: [
+        "针对教育、心理咨询场景下专业内容检索不准、用户咨询响应效率低的问题，主导设计RAG智能问答Agent工作流，采用向量+关键词双路召回优化专业术语检索准确率；结合应用心理学专业背景，参与心理咨询相关语料的专业性评估与合规边界界定，推动专业需求转化为可执行的产品设计。项目上线后用户咨询响应效率与内容专业匹配度均有明显改善。"
+      ]
+    }
+  ],
+
+  skills: [
+    { name: "AI技术", text: "LLM应用开发、**Agent工作流设计**（规则引擎+多模块协作，如AI客服人机协同边界判定）、**RAG架构设计**（向量+关键词双路召回、重排序优化检索准确率）、Function Calling、Prompt工程" },
+    { name: "工具", text: "**n8n**（搭建自动化工作流并独立落地，覆盖数据采集/处理/推送全链路）、**Claude Code + Cursor**（Vibe Coding独立开发，从PRD到可运行系统）、JavaScript数据处理、Xmind" },
+    { name: "方法论", text: "STAR、RICE模型、**数据闭环设计**（人工抽检+低置信度兜底+Badcase周度回流迭代）、需求转化与PRD撰写（对接专业领域/跨角色协作转化产品需求）" }
+  ],
+
+  education: {
+    school: "大理大学",
+    period: "2018-2022",
+    major: "应用心理学专业",
+    degree: "本科"
+  }
+};
+
+/* ==========================================================================
+   渲染逻辑 —— 一般不用改。
+   ========================================================================== */
+
+function md(text) {
+  return text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+}
+
+function render() {
+  const p = RESUME;
+
+  /* 个人信息头部 */
+  const header = `
+    <header class="profile-header">
+      <div class="profile-info">
+        <h1 class="profile-name">${p.name}</h1>
+        <p class="profile-intent">求职意向：${p.intent}</p>
+        <p class="profile-contact">☎️ ${p.phone}　·　📮 ${p.email}　·　现居地：${p.location}</p>
+      </div>
+      <div class="photo-placeholder"><img src="${p.photo}" alt="证件照"></div>
+    </header>`;
+
+  /* 个人优势 */
+  const summary = `
+    <section class="section">
+      <h2 class="section-title">个人优势</h2>
+      <p class="summary">${md(p.summary)}</p>
+    </section>`;
+
+  /* 项目经历 */
+  const projects = `
+    <section class="section">
+      <h2 class="section-title">项目经历</h2>
+      ${p.projects.map(pr => `
+        <article class="project">
+          <h3 class="project-title">${pr.title}</h3>
+          ${pr.rows.map(r => `<p><span class="field-label">${r.label}：</span>${md(r.text)}</p>`).join('')}
+        </article>`).join('')}
+    </section>`;
+
+  /* 工作经历 */
+  const jobs = `
+    <section class="section">
+      <h2 class="section-title">工作经历</h2>
+      ${p.jobs.map(j => `
+        <article class="job">
+          <div class="job-head">
+            <span class="job-company">${j.company}</span>
+            <span class="job-period">${j.period}</span>
+            <span class="job-role">${j.role}</span>
+          </div>
+          ${j.desc.map(d => `<p>${md(d)}</p>`).join('')}
+        </article>`).join('')}
+    </section>`;
+
+  /* 技能总结 */
+  const skills = `
+    <section class="section">
+      <h2 class="section-title">技能总结</h2>
+      ${p.skills.map(s => `<p class="skill-row"><span class="skill-name">${s.name}</span>　${md(s.text)}</p>`).join('')}
+    </section>`;
+
+  /* 教育背景 */
+  const education = `
+    <section class="section">
+      <h2 class="section-title">教育背景</h2>
+      <div class="edu-head">
+        <span class="edu-school">${p.education.school}</span>
+        <span class="edu-period">${p.education.period}</span>
+        <span class="edu-major">${p.education.major}</span>
+        <span class="edu-degree">${p.education.degree}</span>
+      </div>
+    </section>`;
+
+  document.getElementById('page').innerHTML = header + summary + projects + jobs + skills + education;
+
+  document.title = p.name + " · AI 产品经理简历";
+
+  const ld = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": p.name,
+    "jobTitle": "AI 产品经理",
+    "telephone": p.phone,
+    "email": p.email,
+    "knowsAbout": ["RAG", "Agent 工作流", "LLM 应用开发", "Prompt 工程", "Function Calling"]
+  };
+  const ldScript = document.createElement('script');
+  ldScript.type = 'application/ld+json';
+  ldScript.textContent = JSON.stringify(ld);
+  document.head.appendChild(ldScript);
+}
+
+render();
+</script>
+
+</body>
+</html>
