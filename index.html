@@ -215,6 +215,8 @@
   .job-company{ font-size: 17px; font-weight: 600; }
   .job-meta{ font-size: 13px; color: var(--ink-soft); font-weight:600; }
   .job-body{ font-size: 14.5px; color: var(--ink); max-width: 72ch; }
+  .job-body p{ margin: 0 0 8px; }
+  .job-body p:last-child{ margin-bottom: 0; }
 
   /* ---- 项目经历 ---- */
   .project-card{ background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; margin-bottom: 22px; }
@@ -389,15 +391,21 @@ const RESUME = {
   jobs: [
     {
       company: "上海百秋新网商数字科技有限公司",
-      period: "2025.03 - 2026.08",
-      role: "AI产品经理",
-      body: "主导客服中心AI化升级，设计RAG智能问答与AI工单路由双引擎方案，协调算法/研发/运营10人团队推进落地；负责客服运营业务线的AI能力复用与流程重构。项目上线后客服综合运营成本与人力投入大幅下降，服务响应效率与客户满意度显著提升，该业务线人效提升35%。"
+      period: "2025.03~2026.08",
+      role: "AI 产品经理",
+      desc: [
+        "主导客服中心AI化升级，设计RAG智能问答与AI工单路由双引擎方案，深入理解企业客服业务流程与成本结构，协调算法/研发/运营10人团队推进跨部门项目落地。",
+        "负责客服运营业务线的AI能力复用与流程重构。项目上线后客服综合运营成本与人力投入大幅下降，服务响应效率显著提升，该业务线人效提升35%。"
+      ]
     },
     {
       company: "抵星(深圳)人工智能有限公司",
-      period: "2022.08 - 2025.01",
-      role: "AI产品经理",
-      body: "针对教育、心理咨询场景下专业内容检索不准、用户咨询响应效率低的问题，主导设计RAG智能问答Agent工作流，采用向量+关键词双路召回优化专业术语检索准确率；结合应用心理学专业背景，参与心理咨询相关语料的专业性评估与合规边界界定，推动专业需求转化为可执行的产品设计。项目上线后用户咨询响应效率与内容专业匹配度均有明显改善。"
+      period: "2022.08~2025.01",
+      role: "AI 产品经理",
+      desc: [
+        "负责面向教育/心理咨询机构的SaaS产品规划与交付，深度调研客户（学校、机构）的业务流程与核心痛点，咨询响应效率低、专业内容检索不准的问题，将业务需求转化为可落地的产品方案。",
+        "主导设计RAG智能问答Agent工作流，采用向量+关键词双路召回优化专业术语检索准确率；结合应用心理学专业背景，主导心理咨询相关语料的专业性评估与合规边界界定。项目上线后用户咨询响应效率与内容专业匹配度均有明显改善。"
+      ]
     }
   ],
 
@@ -408,31 +416,31 @@ const RESUME = {
       tagType: "live",
       rows: [
         { label: "背景（痛点）", text: "企业知识分散，通用大模型<mark>幻觉率12%</mark>，人工咨询成本占总客服成本<mark>40%</mark>；工单人工分发效率低，<mark>首响40分钟</mark>，错配率高。" },
-        { label: "技术决策", text: "设计<mark>RAG问答链路</mark>（关键词+语义双路检索找答案 → 排序找最相关内容 → 接入<mark>DeepSeek</mark>生成回答），并搭建<mark>AI工单智能路由</mark>流程（自动判断工单类型、按优先级自动分单）。" },
+        { label: "技术决策", text: "设计<mark>RAG问答链路</mark>（关键词+语义双路检索找答案 → 排序找最相关内容 → 接入<mark>deepseek</mark>生成回答），并搭建<mark>AI工单智能路由</mark>流程（自动判断工单类型、按优先级自动分单）。" },
         { label: "评测兜底", text: "建立<mark>10%人工抽检</mark>+低置信度转人工机制，<mark>Badcase周度标注回流</mark>持续迭代模型与知识库；工单侧建立准确率周报监控路由质量。" },
         { label: "量化结果", text: "问答<mark>准确率65%→89%</mark>，<mark>幻觉率降至3%</mark>，单次调用成本降23%，年省人力150万；工单首响<mark>40分钟→12分钟</mark>，错配率降60%，释放<mark>30%运营人力</mark>。" },
-        { label: "延伸实践", text: "结合9月新发布的《顾客联络服务 人工与智能客户服务协同要求》<mark>国标</mark>，独立设计并开发<mark>AI客服人机协同MVP</mark>——用<mark>Claude Code+Cursor</mark>完成从PRD到系统的<mark>Vibe Coding</mark>独立开发；核心是把\"AI该答什么、什么必须转人工\"这条边界固化成<mark>规则引擎（P0-P5五级）+承诺留痕+运营看板</mark>的可执行闭环；转人工判定用<mark>独立于大模型的纯规则</mark>，保证AI故障时人工通道仍可用；46项自动化测试全部通过，作为该问题在新监管要求下的产品方案预研。" }
+        { label: "延伸实践", text: "结合9月新发布的《顾客联络服务 人工与智能客户服务协同要求》<mark>国标</mark>，独立设计并开发<mark>AI客服人机协同MVP</mark>——用<mark>Claude Code+Cursor</mark>完成从PRD到系统的<mark>Vibe Coding</mark>独立开发；核心是把\"AI该答什么、什么必须转人工\"这条边界固化成<mark>规则引擎（P0-P5五级）+承诺留痕+运营看板</mark>的可执行闭环；转人工判定用<mark>独立于大模型的纯规则</mark>，保证AI故障时人工通道仍可用。" }
       ]
     },
     {
-      title: "项目二：AI每日简报助手",
+      title: "项目二：AI每日简报助手（个人独立项目）",
       tag: "个人独立项目",
       tagType: "solo",
       rows: [
         { label: "背景（痛点）", text: "AI资讯呈现“多、散、慢、语言墙”特征——论文站/科技媒体/国内快讯分散在十几个渠道，前沿内容多为英文，用户<mark>日均刷资讯耗时约30分钟</mark>。" },
         { label: "技术决策", text: "设计“<mark>多源采集</mark>→归一去重→<mark>RAG</mark>翻译摘要→<mark>多维表格沉淀</mark>→<mark>个性化推送</mark>”两条自动流水线（采集入库/早报推送）；技术选型<mark>n8n</mark>可视化编排+<mark>飞书</mark>开放平台+<mark>DeepSeek</mark>。" },
-        { label: "评测兜底", text: "接入真实DeepSeek API与飞书日历/多维表格联调验证，覆盖4个信息源；定位并解决9类第三方对接问题，实现<mark>零人工干预</mark>自动运行。" },
-        { label: "量化结果", text: "日均资讯获取时长从<mark>30分钟→2分钟</mark>（降幅超<mark>90%</mark>）；4源、单源限流5条控制信息噪音与调用成本；去重机制大幅降低重复调用成本。" }
+        { label: "评测兜底", text: "接入真实DeepSeek API与飞书日历/多维表格联调验证，覆盖4个信息源，实现<mark>零人工干预</mark>自动运行。" },
+        { label: "量化结果", text: "日均资讯获取时长从<mark>30分钟→2分钟</mark>（降幅超<mark>90%</mark>）；4源限流、去重控制信息噪音与调用成本。" }
       ]
     },
     {
-      title: "项目三：营养助手",
+      title: "项目三：营养助手（个人独立项目）",
       tag: "个人独立项目",
       tagType: "solo",
       rows: [
-        { label: "背景（痛点）", text: "饮食记录门槛高，<mark>一顿饭需7-8步</mark>操作，且用户需额外切换App，加上缺乏即时反馈，用户难以坚持。" },
-        { label: "技术决策", text: "设计“<mark>建档定标→文字/食材/图片三种输入→自动记账→反馈闭环</mark>”；接入<mark>qwen</mark>-max、qwen-vl-max，n8n+飞书搭建MVP。" },
-        { label: "评测兜底", text: "约<mark>20个节点</mark>端到端联调，定位并解决12类工程问题，支持<mark>多用户</mark>按open_id隔离并发使用。" },
+        { label: "背景（痛点）", text: "饮食记录门槛高，<mark>一顿饭需7-8步</mark>操作，且需额外切换App，加上缺乏即时反馈，用户难以坚持。" },
+        { label: "技术决策", text: "设计“<mark>建档定标→文字/食材/图片三种输入→自动记账→反馈闭环</mark>”；接入<mark>qwen</mark>、n8n+飞书搭建MVP。" },
+        { label: "评测兜底", text: "约<mark>20个节点</mark>端到端联调，支持<mark>多用户</mark>按open_id隔离并发使用。" },
         { label: "量化结果", text: "单次饮食记录操作从<mark>7-8步→1条消息</mark>（降幅超<mark>85%</mark>）；响应耗时约<mark>3-5秒</mark>；由<mark>一人独立完成</mark>需求定义、设计到落地全流程。" }
       ]
     }
@@ -441,22 +449,23 @@ const RESUME = {
   skills: {
     "AI技术": [
       "LLM应用开发",
-      "Agent工作流设计（规则引擎+多模块协作，如AI客服人机协同边界判定）",
+      "Agent工作流设计（规则引擎+多模块协作）",
       "RAG架构设计（向量+关键词双路召回、重排序优化检索准确率）",
       "Function Calling",
       "Prompt工程"
     ],
     "工具": [
-      "n8n（搭建自动化工作流并独立落地，覆盖数据采集/处理/推送全链路）",
+      "n8n（搭建自动化工作流并独立落地）",
       "Claude Code + Cursor（Vibe Coding独立开发，从PRD到可运行系统）",
-      "JavaScript数据处理",
+      "SQL提取数据",
+      "Python清洗日志",
       "Xmind"
     ],
     "方法论": [
       "STAR",
       "RICE模型",
       "数据闭环设计（人工抽检+低置信度兜底+Badcase周度回流迭代）",
-      "需求转化与PRD撰写（对接专业领域/跨角色协作转化产品需求）"
+      "需求转化与PRD撰写"
     ]
   },
 
@@ -589,7 +598,7 @@ function renderJobs(){
         <span class="job-company">${job.company} · ${job.role}</span>
         <span class="job-meta">${job.period}</span>
       </div>
-      <div class="job-body">${job.body}</div>
+      <div class="job-body">${job.desc.map(d => `<p>${d}</p>`).join('')}</div>
     </div>
   `).join('');
 }
